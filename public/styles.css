@@ -1,0 +1,90 @@
+body {
+    font-family: sans-serif;
+    background: #f7f7f7;
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .container {
+    max-width: 450px;
+    width: 100%;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  form {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 1rem;
+  }
+  
+  label {
+    display: block;
+    margin-top: 1rem;
+  }
+  
+  input,
+  select,
+  button {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    margin-top: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .toggle-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .toggle-buttons button {
+    padding: 0.5rem 1.2rem;
+    background: #eee;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .toggle-buttons button.active {
+    background: #3498db;
+    color: white;
+  }
+  /* student-dashboard */
+  .info-card {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  #hostelForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  #hostelForm input[type="month"] {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }

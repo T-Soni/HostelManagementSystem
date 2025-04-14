@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Admin Panel</h2>
+    <a href="#rooms">Room Management</a>
+    <a href="#students">Student Records</a>
+    <a href="#payments">Fee Payments</a>
+    <a href="#reports">Reports</a>
+  </div>
+
+  <div class="main-content">
+    <!-- Room Allocation Section -->
+    <section id="rooms">
+      <h3>Allocate Room</h3>
+      <form id="allocateForm">
+        <input type="text" id="studentRoll" placeholder="Student Roll No" required>
+        <select id="roomSelect" required>
+          <!-- Populated via JavaScript -->
+        </select>
+        <button type="submit">Allocate</button>
+      </form>
+    </section>
+
+    <!-- Student Records Section -->
+    <section id="students">
+      <h3>Student List</h3>
+      <table id="studentsTable">
+        <thead>
+          <tr>
+            <th>Roll No</th><th>Name</th><th>Room</th><th>Status</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </div>
+  <script src="admin.js"></script>
+</body>
+</html>

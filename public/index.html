@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hostel Login/Register</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>Hostel Management System</h1>
+
+    <label for="role">Login as:</label>
+    <select id="role">
+      <option value="student">Student</option>
+      <option value="admin">Admin</option>
+    </select>
+
+    <div class="toggle-buttons">
+      <button id="registerBtn" class="active">Register</button>
+      <button id="loginBtn">Login</button>
+    </div>
+
+    <!-- Student Register Form -->
+    <form id="studentRegisterForm">
+      <h2>Student Register</h2>
+      <label>Roll Number: <input type="text" id="s_roll" required></label>
+      <label>Name: <input type="text" id="s_name" required></label>
+      <label>Password: <input type="password" id="s_password" required></label>
+      <label>Gender:
+        <select id="s_gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </label>
+      <label>Program:
+        <select id="s_program">
+          <option value="BTech">BTech</option>
+          <option value="MTech">MTech</option>
+        </select>
+      </label>
+      <label>Year: <input type="number" id="s_year" min="1" max="4" required></label>
+      <button type="submit">Register</button>
+    </form>
+
+    <!-- Student Login Form -->
+    <form id="studentLoginForm" style="display: none;">
+      <h2>Student Login</h2>
+      <label>Roll Number: <input type="text" id="login_roll" required></label>
+      <label>Password: <input type="password" id="login_password" required></label>
+      <button type="submit">Login</button>
+    </form>
+
+    <!-- Admin Login Form -->
+    <form id="adminLoginForm" style="display: none;">
+      <h2>Admin Login</h2>
+      <label>Username: <input type="text" id="a_username" required></label>
+      <label>Password: <input type="password" id="a_password" required></label>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

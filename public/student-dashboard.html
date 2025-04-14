@@ -1,0 +1,72 @@
+<!-- <div class="dashboard">
+    <h2>Welcome, <span id="studentName"></span></h2>
+    <div class="card">
+      <h3>Your Room</h3>
+      <p id="roomDetails">Not allocated yet</p>
+    </div>
+    <div class="card">
+      <h3>Fee Status</h3>
+      <p id="feeStatus">Unpaid</p>
+    </div>
+  </div>
+  <script src="student.js"></script>
+   -->
+   <!-- <!DOCTYPE html>
+   <html>
+   <head>
+     <title>Student Dashboard</title>
+     <link rel="stylesheet" href="styles.css">
+   </head>
+   <body>
+     <div class="dashboard">
+       <h1>Welcome, <span id="studentName"></span></h1>
+       <div class="info-card">
+         <h3>Your Details</h3>
+         <p>Roll Number: <span id="studentRoll"></span></p>
+         <p>Room: <span id="studentRoom">Not allocated</span></p>
+       </div>
+       <button id="logoutBtn">Logout</button>
+     </div>
+     <script src="student-dashboard.js"></script>
+   </body>
+   </html> -->
+
+
+   <!DOCTYPE html>
+<html>
+<head>
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="dashboard">
+    <h1>Welcome, <span id="studentName"></span></h1>
+    
+    <!-- Student Details Card -->
+    <div class="info-card">
+      <h3>Your Details</h3>
+      <p>Roll Number: <span id="studentRoll"></span></p>
+      <p>Program: <span id="studentProgram"></span></p>
+      <p>Year: <span id="studentYear"></span></p>
+      <p>Room: <span id="studentRoom">Not allocated</span></p>
+      <p>Fee Status: <span id="feeStatus">Unpaid</span></p>
+    </div>
+
+    <!-- Hostel Application Section (Conditional) -->
+    <div id="hostelApplication" class="info-card" style="display: none;">
+      <h3>Apply for Hostel</h3>
+      <form id="hostelForm">
+        <label>Period:
+          <input type="month" id="periodStart" required> to 
+          <input type="month" id="periodEnd" required>
+        </label>
+        <button type="submit">Proceed to Payment</button>
+      </form>
+    </div>
+
+    <button id="logoutBtn">Logout</button>
+  </div>
+
+  <script src="student-dashboard.js"></script>
+</body>
+</html>
