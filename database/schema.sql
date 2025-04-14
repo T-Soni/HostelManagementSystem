@@ -55,19 +55,43 @@ CREATE TABLE hostels (
 ALTER TABLE rooms ADD COLUMN hostel_id INT NOT NULL AFTER room_id;
 ALTER TABLE rooms ADD FOREIGN KEY (hostel_id) REFERENCES hostels(hostel_id);
 
--- 3. Payments Table (updated)
-ALTER TABLE payments 
-ADD COLUMN application_id INT NOT NULL AFTER payment_id,
-ADD COLUMN period_start DATE NOT NULL,
-ADD COLUMN period_end DATE NOT NULL;
+-- -- 3. Payments Table (updated)
+-- ALTER TABLE payments 
+-- ADD COLUMN application_id INT NOT NULL AFTER payment_id,
+-- ADD COLUMN period_start DATE NOT NULL,
+-- ADD COLUMN period_end DATE NOT NULL;
 
--- 4. Applications Table
-CREATE TABLE applications (
+-- -- 4. Applications Table
+-- CREATE TABLE applications (
+--   application_id INT AUTO_INCREMENT PRIMARY KEY,
+--   student_id INT NOT NULL,
+--   hostel_id INT NOT NULL,
+--   status ENUM('pending','approved','rejected') DEFAULT 'pending',
+--   FOREIGN KEY (student_id) REFERENCES students(id),
+--   FOREIGN KEY (hostel_id) REFERENCES hostels(hostel_id)
+-- );
+
+-- Applications table (if not exists)
+CREATE TABLE IF NOT EXISTS applications (
   application_id INT AUTO_INCREMENT PRIMARY KEY,
   student_id INT NOT NULL,
   hostel_id INT NOT NULL,
+  period_start DATE NOT NULL,
+  period_end DATE NOT NULL,
   status ENUM('pending','approved','rejected') DEFAULT 'pending',
   FOREIGN KEY (student_id) REFERENCES students(id),
   FOREIGN KEY (hostel_id) REFERENCES hostels(hostel_id)
+);
+
+-- Payments table (if not exists)
+CREATE TABLE IF NOT EXISTS payments (
+  payment_id INT AUTO_INCREMENT PRIMARY KEY,
+  application_id INT NOT NULL,
+  student_id INT NOT NULL,
+  amount DECIMAL(10,2) NOT NULL,
+  status ENUM('paid','unpaid') DEFAULT 'unpaid',
+  payment_date DATE DEFAULT NULL,
+  FOREIGN KEY (application_id) REFERENCES applications(application_id),
+  FOREIGN KEY (student_id) REFERENCES students(id)
 );
 
